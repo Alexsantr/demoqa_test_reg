@@ -17,8 +17,8 @@ public class TestSetting {
     static void setup() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout = 10000;
-        Configuration.browserSize = System.getProperty("browserSize");
         Configuration.browser = System.getProperty("browser");
+        Configuration.browserSize = System.getProperty("browserSize");
         Configuration.browserVersion = System.getProperty("browserVersion", "126");
         Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
 
