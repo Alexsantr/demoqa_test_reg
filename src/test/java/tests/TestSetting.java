@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -17,9 +18,10 @@ public class TestSetting {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout = 10000;
         Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
         Configuration.browser = System.getProperty("browser");
         Configuration.browserVersion = System.getProperty("browserVersion", "126");
+        Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
+
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -38,5 +40,6 @@ public class TestSetting {
         Attach.browserConsoleLogs();
         Attach.addVideo();
 
+        Selenide.closeWebDriver();
     }
 }
