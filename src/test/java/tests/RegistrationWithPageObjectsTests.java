@@ -52,7 +52,7 @@ public class RegistrationWithPageObjectsTests extends TestSetting {
                 .checkResultTable("State and City", testData.userState+" "+testData.userCity);
     }
 
-
+    @Tag("demode")
     @Test
     void successMinFullRegistrationTest() {registrationPage.openPage()
             .setFirstName(testData.firstName)
@@ -68,7 +68,7 @@ public class RegistrationWithPageObjectsTests extends TestSetting {
             .checkResultTable("Gender", testData.gender)
             .checkResultTable("Date of Birth", timeToDay);
     }
-
+    @Tag("demode")
     @Test
     void notSuccessMinFullRegistrationTest() {registrationPage.openPage()
             .submit()
