@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.Locale;
 
 
-
+@Tag("demode")
 public class RegistrationWithPageObjectsTests extends TestSetting {
 
 
@@ -20,7 +20,7 @@ public class RegistrationWithPageObjectsTests extends TestSetting {
     DateFormat dateFormat = new SimpleDateFormat("dd MMMMM,yyyy", Locale.UK);
     String timeToDay = dateFormat.format(new Date());
 
-    @Tag("demode")
+
     @Test
     void successfulRegistrationTest() {
         registrationPage.openPage()
@@ -52,7 +52,7 @@ public class RegistrationWithPageObjectsTests extends TestSetting {
                 .checkResultTable("State and City", testData.userState+" "+testData.userCity);
     }
 
-    @Tag("demode")
+
     @Test
     void successMinFullRegistrationTest() {registrationPage.openPage()
             .setFirstName(testData.firstName)
@@ -68,7 +68,7 @@ public class RegistrationWithPageObjectsTests extends TestSetting {
             .checkResultTable("Gender", testData.gender)
             .checkResultTable("Date of Birth", timeToDay);
     }
-    @Tag("demode")
+
     @Test
     void notSuccessMinFullRegistrationTest() {registrationPage.openPage()
             .submit()
