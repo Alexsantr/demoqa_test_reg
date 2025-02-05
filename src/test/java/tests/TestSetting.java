@@ -6,15 +6,15 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
 public class TestSetting {
 
-    @BeforeAll
-    static void setup() {
+    @BeforeEach
+    void setup() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = System.getProperty("browserSize");
         Configuration.timeout = 10000;
